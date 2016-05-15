@@ -12,13 +12,13 @@ public class FileMaker {
     private File deltaFile;
     private File tempFile;
 
-    public void accsesToFiles(String path) {
+    public void accessToFiles(String path) {
 
         try {
             newFileVersion = getAccessFile(path + System.getProperty("file.separator") + "test_new.txt");
             oldFileVersion = getAccessFile(path + System.getProperty("file.separator") + "test_old.txt");
-            deltaFile = getAccesDeltaFile(path + System.getProperty("file.separator") + "delta.txt");
-            tempFile = getAccesDeltaFile(path + System.getProperty("file.separator") + "temp.txt");
+            deltaFile = getAccessDeltaFile(path + System.getProperty("file.separator") + "delta.txt");
+            tempFile = getAccessDeltaFile(path + System.getProperty("file.separator") + "temp.txt");
             Writer.setNameDeltaFile(path + System.getProperty("file.separator") + "delta.txt");
             Writer.setNameNewFile(path + System.getProperty("file.separator") + "test_new.txt");
             Writer.setNameOldFile(path + System.getProperty("file.separator") + "test_old.txt");
@@ -36,7 +36,7 @@ public class FileMaker {
         return unit;
     }
 
-    private File getAccesDeltaFile(String way) {
+    private File getAccessDeltaFile(String way) {
         File unit = new File(way);
         if (unit.exists()) {
             try {
