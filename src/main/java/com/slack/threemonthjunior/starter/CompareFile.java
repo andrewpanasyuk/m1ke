@@ -18,7 +18,7 @@ public class CompareFile {
 
     public void compareTwoFile() {
         fileMaker = new FileMaker();
-        fileMaker.accsesToFiles("D:" + System.getProperty("file.separator") + "test");
+        fileMaker.accessToFiles("D:" + System.getProperty("file.separator") + "test");
         DeltaData.createDeltaChanges(fileMaker);
         RecoveryLastVersion.recoveryFile(fileMaker);
     }
