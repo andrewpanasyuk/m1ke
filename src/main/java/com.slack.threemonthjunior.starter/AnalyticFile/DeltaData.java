@@ -1,8 +1,10 @@
-package Compare;
+package com.slack.threemonthjunior.starter.AnalyticFile;
 
-import Compare.FileHandling.FileMaker;
-import Compare.FileHandling.FileWorkService;
-import Compare.FileHandling.Writer;
+
+
+import com.slack.threemonthjunior.starter.FileHandling.FileMaker;
+import com.slack.threemonthjunior.starter.FileHandling.FileWorkService;
+import com.slack.threemonthjunior.starter.FileHandling.Writer;
 
 import java.util.ArrayList;
 
@@ -10,17 +12,13 @@ import java.util.ArrayList;
  * Created by a_pan on 15.05.2016.
  */
 public class DeltaData {
-    static ArrayList<Integer> oldString = new ArrayList();
-    static ArrayList<Integer> newString = new ArrayList();
+    static ArrayList<String> oldString = new ArrayList();
+    static ArrayList<String> newString = new ArrayList();
 
     public static void createDeltaChanges(FileMaker fileMaker) {
         selectAddString(fileMaker);
         selectDelString(fileMaker);
         selectChangedPosString();
-
-
-
-
     }
 
     private static void selectAddString(FileMaker fileMaker) {
@@ -32,7 +30,7 @@ public class DeltaData {
             if (!FileWorkService.isThereStringInTheFile(newStringForTest, fileMaker.getOldFileVersion())) {
                 Writer.deltaWriter("> " + FileWorkService.getStringOnIndex(stringIndex, fileMaker.getNewFileVersion()) + " $" + stringIndex);
             } else {
-                oldString.add(newStringForTest.hashCode());
+                oldString.add(newStringForTest);
             }
         }
     }
@@ -47,7 +45,7 @@ public class DeltaData {
 
             }
             if (FileWorkService.isThereStringInTheFile(oldStringForTest, fileMaker.getNewFileVersion())) {
-                newString.add(oldStringForTest.hashCode());
+                newString.add(oldStringForTest);
             }
 
         }
@@ -56,8 +54,8 @@ public class DeltaData {
     private static void selectChangedPosString(){
         for (int i = 0; i < newString.size(); i++) {
 
-            if (i == oldString.indexOf(newString.get(i))) {
-                Writer.deltaWriter("*" + newString.get(i) + "$" + oldString.indexOf(newString.get(i)));
+            if (i != oldString.indexOf(newString.get(i))) {
+                Writer.deltaWriter("*" + newString.get(i) + "$" + oldString.indexOf(oldString.get(i)));
             }
         }
     }
