@@ -1,8 +1,8 @@
-package Compare;
+package com.slack.threemonthjunior.starter;
 
-import Compare.FileHandling.FileMaker;
-import Compare.FileHandling.FileWorkService;
-import Compare.FileHandling.Writer;
+import com.slack.threemonthjunior.starter.FileHandling.FileMaker;
+import com.slack.threemonthjunior.starter.FileHandling.FileWorkService;
+import com.slack.threemonthjunior.starter.FileHandling.Writer;
 
 import java.util.ArrayList;
 
@@ -17,10 +17,6 @@ public class DeltaData {
         selectAddString(fileMaker);
         selectDelString(fileMaker);
         selectChangedPosString();
-
-
-
-
     }
 
     private static void selectAddString(FileMaker fileMaker) {
@@ -44,7 +40,6 @@ public class DeltaData {
             if (!FileWorkService.isThereStringInTheFile(oldStringForTest, fileMaker.getNewFileVersion())) {
                 int oldIndex = FileWorkService.getNumberLineOfString(oldStringForTest, fileMaker.getOldFileVersion());
                 Writer.deltaWriter("< " + oldStringForTest + " $" + oldIndex);
-
             }
             if (FileWorkService.isThereStringInTheFile(oldStringForTest, fileMaker.getNewFileVersion())) {
                 newString.add(oldStringForTest.hashCode());

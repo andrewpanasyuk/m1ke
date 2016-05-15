@@ -1,4 +1,4 @@
-package Compare.FileHandling;
+package com.slack.threemonthjunior.starter.FileHandling;
 
 import java.util.ArrayList;
 import java.util.List;

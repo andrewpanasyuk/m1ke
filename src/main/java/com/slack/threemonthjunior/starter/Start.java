@@ -1,7 +1,4 @@
-package com.clack.threemonthjunior.starter;
-
-import CompareFile;
-
+package com.slack.threemonthjunior.starter;
 
 /**
  * Created by a_pan on 12.05.2016.

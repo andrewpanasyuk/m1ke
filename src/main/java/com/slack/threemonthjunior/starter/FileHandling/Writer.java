@@ -1,4 +1,4 @@
-package Compare.FileHandling;
+package com.slack.threemonthjunior.starter.FileHandling;
 
 import java.io.*;
 
@@ -36,9 +36,7 @@ public class Writer {
 
             }
         }
-
     }
-
 
     public static void ChangeString(int number, File file) {
 //        File file = new File("Delta.info");
@@ -149,41 +147,6 @@ public class Writer {
 
     }
 
-    //    public static void TestFile(){
-//        File file = new File("TestN.txt");
-//        RandomAccessFile randomAccessFile = null;
-//
-//        if (!file.exists()) {
-//            try {
-//                file.createNewFile();
-//            } catch (IOException ex){
-//                ex.printStackTrace();
-//            }
-//        }
-//
-//        try {
-//            randomAccessFile = new RandomAccessFile(file,"rw");
-//            String tempString;
-//            while ((tempString = randomAccessFile.readLine()) != null) {
-//                randomAccessFile.seek(randomAccessFile.getFilePointer());
-//            }
-//
-//            randomAccessFile.writeBytes("" + "\n");
-//
-//        } catch (IOException ex){
-//            ex.printStackTrace();
-//        } finally {
-//            if (randomAccessFile != null){
-//                try {
-//                    randomAccessFile.close();
-//                } catch (IOException ex){
-//                    ex.printStackTrace();
-//                }
-//
-//            }
-//        }
-//
-//    }
     public static void addString(int number, String string) {
         File file = new File("list_temp.txt");
         File file_tmp = new File("tmp.txt");
@@ -228,7 +191,3 @@ public class Writer {
         Writer.nameDeltaFile = nameDeltaFile;
     }
 }
-//file.delete();
-//file_tmp.renameTo(file);
-//file_tmp.delete();
-
