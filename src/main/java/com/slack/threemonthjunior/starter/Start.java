@@ -1,4 +1,4 @@
-package com.clack.threemonthjunior.starter;
+package com.slack.threemonthjunior.starter;
 
 import CompareFile;
 

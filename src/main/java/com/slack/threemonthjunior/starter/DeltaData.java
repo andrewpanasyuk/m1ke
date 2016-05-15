@@ -1,8 +1,8 @@
-package Compare;
+package com.slack.threemonthjunior.starter;
 
-import Compare.FileHandling.FileMaker;
-import Compare.FileHandling.FileWorkService;
-import Compare.FileHandling.Writer;
+import com.slack.threemonthjunior.starter.FileHandling.FileMaker;
+import com.slack.threemonthjunior.starter.FileHandling.FileWorkService;
+import com.slack.threemonthjunior.starter.FileHandling.Writer;
 
 import java.util.ArrayList;
 

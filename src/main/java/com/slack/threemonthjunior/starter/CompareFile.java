@@ -1,12 +1,9 @@
-package Compare;
+package com.slack.threemonthjunior.starter;
 
-import Compare.FileHandling.FileMaker;
-import Compare.FileHandling.RecoveryLastVersion;
-import Compare.FileHandling.Writer;
+import com.slack.threemonthjunior.starter.FileHandling.FileMaker;
+import com.slack.threemonthjunior.starter.FileHandling.RecoveryLastVersion;
 
 
-import java.io.File;
-import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 
